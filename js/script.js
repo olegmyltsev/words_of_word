@@ -17,7 +17,7 @@ function hideLetters() {
     }
 }
 hideLetters()
-hiddenLetters =  localStorage.getItem("saveArray").split(",");
+
 
 let inputBox = null;
 
@@ -60,7 +60,9 @@ function check() {
             clearInput()
         }
     }
+
     localStorage.setItem("saveArray", hiddenLetters);
+    hiddenLetters =  localStorage.getItem("saveArray").split(",");
 }
 setInterval(function () { check() }, 1000);
 
