@@ -1,0 +1,48 @@
+@font-face {
+    font-family: "Azov";
+    src: url(../fonts/Azov.ttf)
+}
+
+*{
+    font-family: Azov ;
+    text-align: center;
+    user-select: none;
+}
+
+.container{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+
+.input{
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.input_box{
+    font-size: 30px;
+    height: 40px;
+    display: inline;
+}
+
+#words{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around ;
+}
+
+.unsolved_word{
+    width: 250px;
+    margin-top: 10px; 
+    margin-right: 20px;
+}
+
+.unsolved_word>span{
+    display: block;
+}
+
+
+
