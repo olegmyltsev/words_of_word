@@ -18,6 +18,16 @@ function hideLetters() {
 }
 hideLetters()
 
+let savedWords;
+function saveWords() {
+    savedWords = document.cookie
+    savedWords = savedWords.split("=")
+    savedWords = savedWords[1].split(";")
+    savedWords = savedWords[0].split(",")
+}
+saveWords()
+
+hiddenLetters = savedWords
 
 let inputBox = null;
 
@@ -34,6 +44,8 @@ function wordsArray() {
     countWords++
 };
 wordsArray();
+
+
 
 function getLetter(letter, getName) {
     getName.disabled = true;
@@ -56,13 +68,13 @@ function check() {
     for (let index = 0; index < words.length; index++) {
         if (inputBox == words[index] && hiddenLetters[index] !== words[index]) {
             hiddenLetters[index] = words[index]
-            wordsArray()
-            clearInput()
-        }
-    }
+            wordsArray();
+            clearInput();
+            document.cookie = "words=" + hiddenLetters;
 
-    localStorage.setItem("saveArray", hiddenLetters);
-    hiddenLetters =  localStorage.getItem("saveArray").split(",");
+        }
+
+    }
 }
 setInterval(function () { check() }, 1000);
 
@@ -75,9 +87,16 @@ function help(getThis) {
         getThis.innerHTML += "<span>" + helps[helpId] + "</span>";
     }
     else {
-        getThis.innerHTML = hiddenLetters[helpId]  }
-    console.log(childrenCheck);
+        getThis.innerHTML = hiddenLetters[helpId]
+    }
 }
+
+
+console.log(savedWords);
+
+
+
+
 
 
 
