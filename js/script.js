@@ -17,7 +17,6 @@ function hideLetters() {
     }
 }
 hideLetters()
-
 let savedWords;
 function saveWords() {
     savedWords = document.cookie
@@ -25,9 +24,8 @@ function saveWords() {
     savedWords = savedWords[1].split(";")
     savedWords = savedWords[0].split(",")
 }
+saveWords()
 
-
-hiddenLetters = savedWords
 
 let inputBox = null;
 
@@ -73,7 +71,7 @@ function check() {
             document.cookie = "words=" + hiddenLetters;
 
         }
-
+        hiddenLetters = savedWords
     }
 }
 setInterval(function () { check() }, 1000);
@@ -90,7 +88,7 @@ function help(getThis) {
         getThis.innerHTML = hiddenLetters[helpId]
     }
 }
-saveWords()
+
 
 console.log(savedWords);
 
