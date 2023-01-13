@@ -63,17 +63,18 @@ function clearInput() {
 }
 
 function check() {
+    hiddenLetters = savedWords
     for (let index = 0; index < words.length; index++) {
         if (inputBox == words[index] && hiddenLetters[index] !== words[index]) {
             hiddenLetters[index] = words[index]
-            wordsArray();
+
             clearInput();
             document.cookie = "words=" + hiddenLetters;
 
         }
-        
+        wordsArray();
     }
-    hiddenLetters = savedWords
+
 }
 setInterval(function () { check() }, 1000);
 
