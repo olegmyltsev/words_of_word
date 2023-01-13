@@ -25,7 +25,7 @@ function saveWords() {
     savedWords = savedWords[1].split(";")
     savedWords = savedWords[0].split(",")
 }
-saveWords()
+
 
 hiddenLetters = savedWords
 
@@ -90,7 +90,7 @@ function help(getThis) {
         getThis.innerHTML = hiddenLetters[helpId]
     }
 }
-
+saveWords()
 
 console.log(savedWords);
 
