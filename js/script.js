@@ -17,6 +17,13 @@ function hideLetters() {
     }
 }
 hideLetters()
+
+test = document.cookie.split("=")
+if (test[0] == "") {
+    document.cookie = "words=" + hiddenLetters + ";expires=Tue, 19 Jan 2038 03:14:07 GMT"
+}
+
+
 let savedWords;
 function saveWords() {
     savedWords = document.cookie
@@ -61,21 +68,20 @@ function clearInput() {
         getWordBtn[count].disabled = false
     }
 }
-
+hiddenLetters = savedWords
 function check() {
-    hiddenLetters = savedWords
+    
     for (let index = 0; index < words.length; index++) {
         if (inputBox == words[index] && hiddenLetters[index] !== words[index]) {
             hiddenLetters[index] = words[index]
 
             clearInput();
             document.cookie = "words=" + hiddenLetters;
-
+            wordsArray();
         }
-        wordsArray();
     }
-
 }
+
 setInterval(function () { check() }, 1000);
 
 
@@ -90,8 +96,7 @@ function help(getThis) {
         getThis.innerHTML = hiddenLetters[helpId]
     }
 }
-
-
+wordsArray();
 console.log(savedWords);
 
 
