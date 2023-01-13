@@ -71,8 +71,9 @@ function check() {
             document.cookie = "words=" + hiddenLetters;
 
         }
-        hiddenLetters = savedWords
+        
     }
+    hiddenLetters = savedWords
 }
 setInterval(function () { check() }, 1000);
 
