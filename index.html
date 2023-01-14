@@ -11,20 +11,24 @@
 
 <body>
     <div class="container">
-        <h1>Слова из слова</h1>
-        <div class="input">
-            <div id="input_box"></div>
-            <button id="input_btn" onclick="clearInput()">х</button>
-        </div>
-        <div id="word">
-            <button class="word__btn" onclick="getLetter(this.innerHTML, this)">к</button>
-            <button class="word__btn" onclick="getLetter(this.innerHTML, this)">и</button>
-            <button class="word__btn" onclick="getLetter(this.innerHTML, this)">н</button>
-            <button class="word__btn" onclick="getLetter(this.innerHTML, this)">о</button>
-            <button class="word__btn" onclick="getLetter(this.innerHTML, this)">в</button>
-            <button class="word__btn" onclick="getLetter(this.innerHTML, this)">а</button>
-            <button class="word__btn" onclick="getLetter(this.innerHTML, this)">р</button>
-            <button class="word__btn" onclick="getLetter(this.innerHTML, this)">ь</button>
+
+        <div class="header">
+            <h1>Слова из слова</h1>
+            <div class="input">
+                <div id="input_box"></div>
+                <button id="input_btn" onclick="clearInput()">х</button>
+
+            </div>
+            <div id="word">
+                <button class="word__btn" onclick="getLetter(this.innerHTML, this)">к</button>
+                <button class="word__btn" onclick="getLetter(this.innerHTML, this)">и</button>
+                <button class="word__btn" onclick="getLetter(this.innerHTML, this)">н</button>
+                <button class="word__btn" onclick="getLetter(this.innerHTML, this)">о</button>
+                <button class="word__btn" onclick="getLetter(this.innerHTML, this)">в</button>
+                <button class="word__btn" onclick="getLetter(this.innerHTML, this)">а</button>
+                <button class="word__btn" onclick="getLetter(this.innerHTML, this)">р</button>
+                <button class="word__btn" onclick="getLetter(this.innerHTML, this)">ь</button>
+            </div>
         </div>
         <div id="words"></div>
     </div>

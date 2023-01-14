@@ -3,46 +3,99 @@
     src: url(../fonts/Azov.ttf)
 }
 
-*{
-    font-family: Azov ;
+* {
+    font-family: Azov;
     text-align: center;
     user-select: none;
 }
 
-.container{
+.container {
     width: 1000px;
     margin: 0 auto;
 }
 
+.header {
+    position: sticky;
 
-.input{
+    top: 0;
+    background: rgb(255, 255, 255);
+}
+
+.input {
     display: flex;
     justify-content: space-between;
     width: 300px;
     margin: 0 auto;
+
 }
 
-.input_box{
+#input_box {
     font-size: 30px;
     height: 40px;
     display: inline;
 }
 
-#words{
+#input_btn {
+    outline: none;
+    background-color: rgb(255, 211, 153);
+    border: none;
+    height: 30px;
+    width: 30px;
+}
+
+#input_btn:active {
+    background: rgb(207, 155, 88);
+}
+
+#words {
     flex-wrap: wrap;
     display: flex;
-    justify-content: space-around ;
+    justify-content: space-around;
 }
 
-.unsolved_word{
+.word__btn {
+    outline: none;
+    background-color: rgb(255, 211, 153);
+    border: none;
+    height: 30px;
+    width: 30px;
+}
+
+.word__btn:active {
+    background: rgb(207, 155, 88);
+}
+
+.word__btn:disabled {
+    opacity: 0;
+}
+
+.unsolved_word {
     width: 250px;
-    margin-top: 10px; 
+    margin-top: 10px;
     margin-right: 20px;
+    height: 50px;
 }
 
-.unsolved_word>span{
+.unsolved_word>span {
     display: block;
 }
 
+@media (max-width: 1000px) {
+    .container {
+        width: 100vw;
+    }
 
+    .unsolved_word {
+        margin-right: 0;
+    }
+}
 
+@media (max-width: 320px) {
+    .container {
+        width: 100vw;
+    }
+
+    .input {
+        margin: 0;
+    }
+}
