@@ -81,7 +81,7 @@ function getLetterKey(text) {
 
     }
     if (text == 'Backspace') {
-        clearInput()
+        lastClear()
     }
 
 }
