@@ -117,3 +117,8 @@ body {
         margin: 0;
     }
 }
+
+.x,.arrow{
+    height: 15px;
+    margin: auto;
+}
