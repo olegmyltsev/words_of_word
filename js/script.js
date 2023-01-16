@@ -9,9 +9,11 @@ const words = ["аи", "ар", "ва", "аир", "акр", "арк", "ваи", "
 const helps = ["Сорт шампанского", "Еденица площади", "Народность в Китае", "Лекарственное растение", "Англиийская еденица площади", "Крепость", "Народ в Западной Африке", "Вареная смола", "Круглая китайская сковорода", "Человек, занимающийся воровством", "Гибкое дерево", "Понятие китайской философии", "Электрически заряженная частица", "Чашеобразное углубление в верхней части гор ", "Земля, пропитанная нефтью", "Одна партия какой-либо игры", "Вид корсета", "Народность в Канаде", "Гибрид верблюдов", "Конец реи на корабле", "Водяное членистоногое", "Длинная глубокая канава", "Судьба", "Барка для подвоза груза на суда", "Бобовое кормовое растение", "Преступление", "Алкогольный напиток из винограда", "Боец", "Корейская денежная еденица", "Неприятный запах", "Рыбьи яйца", "Монах", "Вид исскуства", "Самец лошади", "Затвердевший слой чего-либо", "Небольшой круглый слиток", "Вирусное заболевание", "Утройство для выпуска жидкости", "Крыша", "Живой мертвец", "Призрак", "Обработанное поле", "Что-то новое", "Жилище животных под землёй", "Вид вдорослей", "Характер", "Строение для сушки снопов", "Счетная монета в Марокко", "Современная монета в Турции", "Жена раджи в Индии", "Раннее утреннее время", "Площадка для катания на коньках", "Животное отряда ластоногих", "Синий коралл из Африки", "Загон для скота", "Живописное изображение святых", "Сплав железа с никелем", "Просообразное растение в Перу", "Священная книга мусульман", "Жидкость, циркулирующая в организме", "Денежная еденица", "Хищный пушной зверек", "Название тропического циклона", "Что-либо рваное",];
 
 let hiddenLetters = [];
-let inputBox = null;
+let inputBox = "";
 let countWords = 0
 let savedWords;
+
+
 
 function hideLetters() {
     for (let index = 0; index < words.length; index++) {
@@ -48,15 +50,44 @@ wordsArray();
 
 function getLetter(letter, getName) {
     getName.disabled = true;
-    if (inputBox == null) {
-        inputBox = letter
-    }
-    else { inputBox += letter }
+    inputBox += letter
     getInputBox.innerHTML = inputBox
 };
 
+function getLetterKey(text) {
+
+    if (text == "к" || text == "и" || text == "н" || text == "о" || text == "в" || text == "а" || text == "р" || text == "ь") {
+        let checkInputLetters = 0;
+        let checkWordLetters = 0;
+        for (let count = 0; count < word.length; count++) {
+            if (text == word[count]) {
+                checkWordLetters++
+            }
+        }
+        for (let index = 0; index < inputBox.length; index++) {
+            if (text == inputBox[index]) {
+                checkInputLetters++
+            }
+        }
+        if (checkWordLetters > checkInputLetters) {
+            inputBox += text
+            getInputBox.innerHTML = inputBox
+        }
+        for (let letterCount = 0; letterCount < getWordBtn.length; letterCount++) {
+            if (getWordBtn[letterCount].innerHTML == text) {
+                getWordBtn[letterCount].disabled = true;
+            }
+        }
+
+    }
+    if (text == 'Backspace') {
+        clearInput()
+    }
+
+}
+
 function clearInput() {
-    inputBox = null;
+    inputBox = "";
     getInputBox.innerHTML = inputBox
     for (let count = 0; count < getWordBtn.length; count++) {
         getWordBtn[count].disabled = false
@@ -87,6 +118,26 @@ function help(getThis) {
     }
 }
 wordsArray();
+
+function lastClear() {
+    inputBox = inputBox.split("")
+    let letterDisable=inputBox.pop()
+    for (let letterCount = 0; letterCount < getWordBtn.length; letterCount++) {
+        if (getWordBtn[letterCount].innerHTML == letterDisable) {
+            getWordBtn[letterCount].disabled = false;
+        }
+    }
+    inputBox = inputBox.join("")
+    getInputBox.innerHTML=inputBox
+
+}
+
+let word = "киноварь"
+addEventListener("keydown", function (event) {
+    let keyText = event.key
+    getLetterKey(keyText)
+
+})
 
 
 

@@ -7,6 +7,12 @@
     font-family: Azov;
     text-align: center;
     user-select: none;
+    margin: 0;
+}
+
+body {
+    background: url(../img/bg.jpg);
+    margin: 0;
 }
 
 .container {
@@ -16,9 +22,10 @@
 
 .header {
     position: sticky;
-
     top: 0;
-    background: rgb(255, 255, 255);
+    background: url(../img/bg_input.jpg);
+    background-size: 110px auto;
+    padding: 10px;
 }
 
 .input {
@@ -35,16 +42,26 @@
     display: inline;
 }
 
-#input_btn {
+#input_btn,
+#input_btn2 {
+    font-size: 20px;
     outline: none;
-    background-color: rgb(255, 211, 153);
+    background-color: rgb(255, 48, 48);
     border: none;
     height: 30px;
     width: 30px;
+    border-radius: 50%;
+}
+#input_btn2{
+    background-color: rgb(255, 204, 0);
 }
 
 #input_btn:active {
-    background: rgb(207, 155, 88);
+    background: rgb(169, 1, 1);
+}
+
+#input_btn2:active {
+    background-color: rgb(186, 149, 0);
 }
 
 #words {
@@ -54,6 +71,7 @@
 }
 
 .word__btn {
+    border-radius: 5px;
     outline: none;
     background-color: rgb(255, 211, 153);
     border: none;
