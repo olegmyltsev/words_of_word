@@ -1,0 +1,16 @@
+@font-face {
+    font-family: azov;
+    src: url(../fonts/Azov.ttf);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: comic;
+    src: url(../fonts/comic.ttf);
+    font-weight: 300;
+}
+@font-face {
+    font-family: comic;
+    src: url(../fonts/comicbd.ttf);
+    font-weight: 500;
+}

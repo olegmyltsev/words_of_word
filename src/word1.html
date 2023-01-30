@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Слова из слова</title>
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/word1.min.css">
+    <link rel="icon" href="img/icon.jpeg">
+</head>
+
+<body id="body">
+
+    <div class="help help_remove" id="help">
+        <div class="header header_help">
+            <div class="help__title">
+                подсказка
+            </div>
+            <button class="btn btn_help" id="btnHelp" onclick="removeHelp()">назад</button>
+        </div>
+        <div class="help__content" id="helpContent"></div>
+    </div>
+
+    <div class='miss' id='miss'>
+        <div class="miss__wrapper">
+            <div class="miss__content" id="missContent">
+                данное слово уже отгаданно
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="input">
+            <div class="input__wrapper">
+                <button class="btn btn_delete-all" id="btnDeleteAll" onclick="inputDeleteAll();
+                ">
+                    <img class="btn__img" src="img/cross.svg" alt="">
+                </button>
+
+                <div class="input__field" id="inputField"></div>
+
+                <button class="btn btn_delete-last" id="btnDeleteLast" onclick="inputDeleteLast()">
+                    <img class="btn__img " src="img/arrow.png" alt="">
+                </button>
+
+            </div>
+
+
+            <div class="input__letters" id="inputLetters">
+                <button class="btn btn_input-letter" onclick="letterProcessing(this);">к</button>
+                <button class="btn btn_input-letter" onclick="letterProcessing(this);">и</button>
+                <button class="btn btn_input-letter" onclick="letterProcessing(this);">н</button>
+                <button class="btn btn_input-letter" onclick="letterProcessing(this);">о</button>
+                <button class="btn btn_input-letter" onclick="letterProcessing(this);">в</button>
+                <button class="btn btn_input-letter" onclick="letterProcessing(this);">а</button>
+                <button class="btn btn_input-letter" onclick="letterProcessing(this);">р</button>
+                <button class="btn btn_input-letter" onclick="letterProcessing(this);">ь</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="words" id="words"></div>
+
+    <div class="futter">
+        <a href="index.html" class="btn btn_meny">меню</a>
+    </div>
+
+
+
+
+    <script src="js/word.js"></script>
+    <script src="js/sound.js"></script>
+
+</body>
+
+</html>
